@@ -1,0 +1,31 @@
+/* ------------------------------------ *\
+	#TOOLS
+\* ------------------------------------ */
+
+// card-padding
+%card_padding {
+  padding: 0 10px;
+}
+
+// songtext letters
+%songtext_letter {
+  font: {
+    family: $font-family-sans-serif;
+    size: 15px;
+    weight: 300;
+  }
+}
+
+// BREAKPOINTS:
+$xs: 410px;
+$sm: 600px;
+$md: 768px;
+$lg: 870px;
+$xl: 1100px;
+
+// MIN SIZE:
+$min-xs: "only screen and (min-width: 410px)";
+$min-sm: "only screen and (min-width: 600px)";
+$min-md: "only screen and (min-width: 768px)";
+$min-lg: "only screen and (min-width: 960px)";
+$min-xl: "only screen and (min-width: 1100px)";

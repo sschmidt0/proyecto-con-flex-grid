@@ -1,0 +1,8 @@
+/* ------------------------------------ *\
+  #UTILITIES
+\* ------------------------------------ */
+
+// hack to obtain white links in navbar
+.u-page-head-navbar-list-item--color {
+  color: $text_color !important;
+}

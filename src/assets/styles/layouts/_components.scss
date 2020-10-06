@@ -1,0 +1,573 @@
+/* ------------------------------------ *\
+  #COMPONENTS
+\* ------------------------------------ */
+
+/******************************************
+**** HEADER + NAVIGATION
+*******************************************/
+
+.c-page-head {
+  height: 85px;
+  color: $text_color;
+  background-color: $background-color;
+
+  &__navbar {
+    z-index: 9999;
+    padding: 0 30px;
+    background-color: $background-color;
+  }
+
+  &__navbar-brand {
+    color: $text_color;
+    padding: 28px 0;
+  }
+
+  &__navbar-toggler-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__navbar-list {
+    &__item {
+      padding: 22px 10px;
+      list-style-type: none;
+
+      &:hover,
+      &:active {
+        background-color: lighten($background-color, 20%);
+
+        @include transition(.2s ease-in-out);
+      }
+    }
+  }
+}
+
+
+
+
+
+/******************************************
+**** FOOTER
+*******************************************/
+
+.c-page-foot {
+  padding: 20px;
+  text-align: center;
+  color: $text_color;
+  background-color: $background-color;
+}
+
+
+
+
+
+/******************************************
+**** POSTER
+*******************************************/
+
+.c-poster-title-main {
+  margin: 0 10px;
+  font-size: 32px;
+  text-align: center;
+  color: $primary;
+
+  @media #{$min-sm} {
+    font-size: 40px;
+  }
+
+  @media #{$min-md} {
+    margin: 0 5px;
+    font-size: 53px;
+  }
+}
+
+@supports (display: grid) {
+  .c-poster-title-main {
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+    justify-self: end;
+    align-self: end;
+    text-align: right;
+    color: $text_color;
+
+    @media #{$min-md} {
+      grid-column: 2 / span 3;
+      grid-row: 2;
+    }
+
+
+    &__span {
+      padding-bottom: 52px;
+      border-bottom: 5px solid $text_color;
+
+      @media #{$min-xs} {
+        padding-bottom: 22px;
+      }
+
+      @media #{$min-sm} {
+        padding-bottom: 14px;
+      }
+
+      @media #{$min-md} {
+        padding-bottom: 80px;
+        border-bottom: 8px solid $text_color;
+      }
+
+      @media #{$min-lg} {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+
+.c-poster-title-sub {
+  font-size: calc(1rem + .8vw);
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@supports (display: grid) {
+  .c-poster-title-sub {
+    grid-row: 2 / span 1;
+    grid-column: 1 / -1;
+    align-self: end;
+    justify-self: end;
+    margin: 0;
+    padding: 0 15px;
+    font-weight: 300;
+    color: $text_color;
+
+    @media #{$min-md} {
+      grid-row: span 3 / -1;
+      grid-column: 5;
+      writing-mode: vertical-rl;
+    }
+  }
+}
+
+
+.c-poster-paragraf {
+  margin-top: 5px;
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+
+  &__icon {
+    margin-right: 15px;
+  }
+}
+
+@supports (display: grid) {
+  .c-poster-paragraf {
+    margin: 0;
+    text-align: left;
+  }
+
+  .c-poster-paragraf-place {
+    grid-row: span 1 / -1;
+    grid-column: 4;
+    align-self: end;
+    padding: 5px;
+    font-size: .8rem;
+
+    &__icon {
+      margin-right: 5px;
+      color: $text_color;
+    }
+  }
+
+  .c-poster-paragraf-date {
+    grid-column: 4;
+    grid-row: span 1 / -2;
+    justify-self: end;
+    padding-right: 10px;
+    font-size: calc(1rem + .8vw);
+
+    @media #{$min-md} {
+      color: $secundary_text_color;
+    }
+
+    &__icon {
+      color: $text_color;
+
+      @media #{$min-md} {
+        color: $secundary_text_color;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+
+.c-poster-image-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@supports (display: grid) {
+  .c-poster-image-container {
+    grid-column: 1 / -1;
+    grid-row: span 2 / -1;
+    justify-self: end;
+    overflow: hidden;
+
+    @media #{$min-md} {
+      grid-column: 1 / span 3;
+      grid-row: span 2 / -1;
+    }
+  }
+}
+
+
+@supports (display: grid) {
+  .c-poster-innerimage-container {
+    display: none;
+    grid-column: 2 / span 1;
+    grid-row: span 1 / -2;
+    width: 60px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    @media #{$min-sm} {
+      width: 80px;
+      height: 60px;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .c-poster-innerimage-container {
+    display: block;
+    grid-column: 2 / span 1;
+    grid-row: span 1 / -2;
+    overflow: hidden;
+  }
+}
+
+
+
+
+
+/******************************************
+**** INFORMATION PAGE
+*******************************************/
+
+// info boxes + content
+.c-info-box {
+  margin-bottom: 15px;
+  padding: 0 23px;
+  border-left: 2px solid $primary;
+
+  &__blockquote {
+    padding: 0;
+    font-size: .9em;
+    line-height: 1.2em;
+
+    &::before {
+      content: " « ";
+    }
+
+    &::after {
+      content: " » ";
+    }
+  }
+
+  &__link {
+    display: block;
+    margin: -5px 0 0;
+    font-size: .7em;
+    line-height: 1em;
+  }
+}
+
+@supports (display: grid) {
+  .c-info-box {
+    grid-column: 2 / -2;
+  }
+
+  @media #{$min-md} {
+    .c-info-box {
+      font-size: .8em;
+    }
+
+    .c-info-box-left {
+      grid-row: 11 / span 2;
+      grid-column: 1 / span 1;
+      align-self: start;
+      text-align: right;
+      border-right: 2px solid $primary;
+      border-left: none;
+    }
+
+    .c-info-box-right {
+      grid-column: span 1 / -1;
+    }
+  }
+}
+
+
+.c-paragraf-blockquote {
+  margin: 30px 0;
+  font: {
+    size: 30px;
+    weight: 100;
+  }
+  line-height: 1.1em;
+  color: $primary;
+
+  &::before {
+    content: " « ";
+  }
+
+  &::after {
+    content: " » ";
+  }
+}
+
+@supports (display: grid) {
+  @media #{$min-md} {
+    .c-paragraf-blockquote {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+
+// positionate figure elements in information page
+@supports (display: grid) {
+  @media #{$min-md} {
+    // s'expandeixen per tota l'amplada
+    .c-figure {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+
+.c-list {
+  width: 80%;
+  margin: 10px auto;
+  font-size: 1.1em;
+  font-weight: 300;
+
+  &__paragraf {
+    font-size: 1em;
+  }
+}
+
+.c-list-paragraf-icon {
+  margin-right: 10px;
+}
+
+
+.c-paragraf-after-link {
+  margin: -20px 0 40px;
+  font-size: .8em;
+  font-style: italic;
+
+  &::before {
+    content: " * ";
+  }
+}
+
+
+
+
+
+/******************************************
+**** GROUP PAGE
+*******************************************/
+
+// style cards
+.c-card {
+  margin: 20px;
+  width: 100%;
+  border: 2px solid #c2c5cc;
+  border-radius: 30px;
+
+  @media #{$min-md} {
+    width: 270px;
+    margin: 10px 3px;
+  }
+}
+
+
+.c-card-body {
+  display: flex;
+  justify-content: center;
+  padding: 18px 10px;
+
+  &__title {
+    font-size: 2em;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    align-self: flex-end;
+  }
+}
+
+
+.c-card-figure {
+  @extend %card_padding;
+
+  &__link {
+    margin-top: -10px;
+    text-decoration: none;
+    color: $secundary_text_color;
+    font-size: 10px;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+
+.c-card-list {
+  @extend %card_padding;
+
+  &__item {
+    padding-top: 5px;
+    padding-left: 10px;
+    list-style: none;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+
+
+
+
+/******************************************
+**** LYRICS PAGE
+*******************************************/
+
+// efecte hover
+.c-gallery-grid-item-overlay {
+  position: relative;
+  padding-bottom: 10px;
+  background-color: $primary;
+  transition: .2s;
+  transform: translateY(100%);
+  opacity: .8;
+
+  &__title {
+    background: none;
+    padding: 5px;
+    color: $text_color;
+    font-size: 15px;
+    text-transform: uppercase;
+    //background: rgba(0, 0, 0, .7);
+  }
+}
+
+.o-gallery-grid-item:hover .c-gallery-grid-item-overlay {
+  transform: translateY(0);
+  cursor: context-menu;
+}
+
+@supports (display: grid) {
+  .c-gallery-grid-item-overlay {
+    position: relative;
+    grid-column: -1 / -1;
+    grid-row: -1 / -1;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: .2s;
+    transform: translateY(100%);
+  }
+
+  .o-gallery-grid-item:hover:hover .c-gallery-grid-item-overlay {
+    transform: translateY(0);
+  }
+}
+
+
+// fons negre a sobre de tot el contingut
+.c-overlay-gallery-grid {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  height: 100vh;
+  background: rgba(0, 0, 0, .7);
+  z-index: 99999;
+
+  // "finestra modal" a sobre del fons negre
+  &__inner {
+    max-width: 700px;
+    height: calc(100vh - 160px);
+    margin: 5% auto;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, .8);
+    overflow: scroll;
+
+
+    // botó "Tancar"
+    &__button-tancar {
+      align-self: flex-end;
+      background: none;
+      color: $secundary_text_color;
+      font: {
+        size: 11px;
+        weight: 800;
+      }
+      border: 0;
+
+      &::before {
+        content: " x ";
+      }
+    }
+  }
+
+
+  // contingut de la "finestra modal"
+  &__modal {
+    &__title {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    &__subtitle {
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      color: $primary;
+      padding: 10px 0 20px;
+
+      &::before {
+        content: " ( ";
+        margin-right: 5px;
+      }
+
+      &::after {
+        content: " ) ";
+        margin-left: 5px;
+      }
+    }
+
+    &__paragraf {
+      @extend %songtext_letter;
+    }
+
+    &__paragraf-last {
+      @extend %songtext_letter;
+      font-size: 10px;
+    }
+  }
+}
+

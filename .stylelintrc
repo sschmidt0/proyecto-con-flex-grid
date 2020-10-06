@@ -1,0 +1,62 @@
+{
+   "extends": "stylelint-config-standard",
+   "plugins": [
+     "stylelint-scss"
+   ],
+   "rules": {
+     "selector-nested-pattern": "^&",
+     "indentation": 2,
+     "no-descending-specificity": null,
+     "no-eol-whitespace": null,
+     "declaration-empty-line-before": null,
+
+     "at-rule-no-unknown": null,
+     "block-no-empty": true,
+      "block-opening-brace-space-before": "always",
+      "color-hex-case": "lower",
+      "color-hex-length": "short",
+      "color-named": "never",
+      "color-no-invalid-hex": true,
+      "comment-whitespace-inside": "always",
+      "declaration-bang-space-after": "never",
+      "declaration-bang-space-before": "always",
+      "declaration-block-semicolon-newline-after": "always",
+      "declaration-block-semicolon-space-before": "never",
+      "declaration-block-single-line-max-declarations": 1,
+      "declaration-block-trailing-semicolon": "always",
+      "declaration-colon-space-after": "always-single-line",
+      "declaration-colon-space-before": "never",
+      "function-comma-space-after": "always-single-line",
+      "function-parentheses-space-inside": "never",
+      "function-url-quotes": "always",
+      "length-zero-no-unit": true,
+      "max-empty-lines": 5,
+      "number-leading-zero": "never",
+      "number-no-trailing-zeros": true,
+      "rule-empty-line-before": [
+        "always-multi-line",
+        {
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ]
+        }
+      ],
+      "selector-class-pattern": [
+        "^[a-z0-9\\-]+$",
+        {
+          "message": "Selector should be written in lowercase with hyphens (selector-class-pattern)"
+        }
+      ],
+      "selector-list-comma-newline-after": "always",
+      "selector-max-id": 0,
+      "selector-no-qualifying-type": true,
+      "selector-pseudo-element-colon-notation": "double",
+      "selector-pseudo-element-no-unknown": true,
+      "shorthand-property-no-redundant-values": true,
+      "string-quotes": "double",
+   }
+}
+

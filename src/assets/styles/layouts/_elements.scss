@@ -1,0 +1,54 @@
+/* ------------------------------------ *\
+  #BASE / ELEMENTS
+\* ------------------------------------ */
+
+// headings
+h1 {
+  margin-top: 20px;
+}
+
+h2 {
+  margin: 20px 0 15px;
+  text-align: left;
+  color: $primary;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+article {
+  margin: 0;
+  padding: 0;
+}
+
+// pre elements for songtexts
+pre {
+  font: {
+    family: $font-family-sans-serif;
+    size: 15px;
+    weight: 300;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  //object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: complement($primary);
+  }
+}
+
+i {
+  margin-right: 10px;
+}
